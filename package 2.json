@@ -1,0 +1,40 @@
+{
+  "name": "spinnersonic-by-stanley",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "next": "15.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.2.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.0",
+    "nano-staged": "^0.8.0",
+    "prettier": "^3.5.3",
+    "simple-git-hooks": "^2.12.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm dlx nano-staged",
+    "pre-push": "pnpm run lint",
+    "preserveUnused": true
+  },
+  "nano-staged": {
+    "*.{js,ts,md,jsx,tsx,json}": "prettier --write"
+  }
+}

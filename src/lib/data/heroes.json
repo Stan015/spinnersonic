@@ -1,0 +1,39 @@
+{
+  "heroes": [
+    {
+      "id": "1",
+      "name": "Captain Blaze",
+      "image": "/heroes/captain-blaze.webp"
+    },
+    {
+      "id": "2",
+      "name": "Shade Vex",
+      "image": "/heroes/shade-vex.webp"
+    },
+    {
+      "id": "3",
+      "name": "Max Volt",
+      "image": "/heroes/max-volt.webp"
+    },
+    {
+      "id": "4",
+      "name": "Commander Nova",
+      "image": "/heroes/commander-nover.webp"
+    },
+    {
+      "id": "5",
+      "name": "jet Li'l",
+      "image": "/heroes/jet-li-l.webp"
+    },
+    {
+      "id": "6",
+      "name": "Granny Blitz",
+      "image": "/heroes/granny-blitz.webp"
+    },
+    {
+      "id": "7",
+      "name": "Dr. Spinstein",
+      "image": "/heroes/dr-spinstein.webp"
+    }
+  ]
+}

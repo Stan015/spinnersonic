@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Comix Loud";
+  src: url("/fonts/ComixLoud.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  --background: #000000;
+  --bg-secondary: linear-gradient(96.2deg, #ff5722 5.22%, #99240b 99.44%);
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-secondary: var(--bg-secondary);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-sometype-mono);
+  --font-comix-loud: "Comix Loud", cursive;
+  --font-titan-one: var(--font-titan-one);
+  --font-comfortaa: var(--font-comfortaa);
+}
+/* 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-mono), Helvetica, sans-serif;
+}
