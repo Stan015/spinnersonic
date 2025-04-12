@@ -10,12 +10,16 @@
   --background: #000000;
   --bg-secondary: linear-gradient(96.2deg, #ff5722 5.22%, #99240b 99.44%);
   --foreground: #ffffff;
+  --clr-yellow: #ffd94d;
+  --clr-red-orange: #fa5421;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-background-secondary: var(--bg-secondary);
   --color-foreground: var(--foreground);
+  --color-yellow: var(--clr-yellow);
+  --color-red-orange: var(--clr-red-orange);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-sometype-mono);
   --font-comix-loud: "Comix Loud", cursive;
@@ -34,4 +38,17 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-mono), Helvetica, sans-serif;
+}
+
+@keyframes spin360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-360 {
+  animation: spin360 10s ease-in-out;
 }

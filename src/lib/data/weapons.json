@@ -1,0 +1,34 @@
+{
+  "weapons": [
+    {
+      "id": 1,
+      "name": "Death Mask",
+      "image": "/weapons/img-1.webp"
+    },
+    {
+      "id": 2,
+      "name": "Death Mask",
+      "image": "/weapons/img-2.webp"
+    },
+    {
+      "id": 3,
+      "name": "Pistol Spinner",
+      "image": "/weapons/img-3.webp"
+    },
+    {
+      "id": 4,
+      "name": "Space Explorer",
+      "image": "/weapons/img-4.webp"
+    },
+    {
+      "id": 5,
+      "name": "Dragon's Breath",
+      "image": "/weapons/img-5.webp"
+    },
+    {
+      "id": 6,
+      "name": "Red Reaper",
+      "image": "/weapons/img-6.webp"
+    }
+  ]
+}

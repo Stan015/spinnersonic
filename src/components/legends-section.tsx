@@ -2,7 +2,7 @@ import LegendsCarousel from "./legends-carousel";
 
 export default function LegendsSection() {
   return (
-    <section className="py-[4rem]">
+    <section className="my-[4rem]">
       <div className="px-[10%] flex flex-col items-center">
         <h2 className="mb-6 font-medium text-4xl font-comfortaa">
           LEGENDS AREN&#39;T BORN, THEY&#39;RE{" "}
