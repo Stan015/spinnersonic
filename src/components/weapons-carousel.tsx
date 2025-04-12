@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { weapons } from "@/lib/data/weapons.json";
+import weapons from "@/lib/data/weapons.json";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,6 +12,8 @@ import cn from "../utils/cn";
 export default function WeaponsCarousel() {
   const sliderRef = useRef<Slider | null>(null);
   const [rotate, setRotate] = useState(false);
+
+  const weaponData = weapons.weapons;
 
   const settings: Settings = {
     dots: false,
@@ -31,7 +33,7 @@ export default function WeaponsCarousel() {
   return (
     <div className="overflow-hidden w-full h-full">
       <Slider ref={sliderRef} {...settings}>
-        {weapons.map((weapon) => (
+        {weaponData.map((weapon) => (
           <div
             key={weapon.id}
             className="w-max flex justify-center items-center"

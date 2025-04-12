@@ -1,12 +1,14 @@
 "use client";
 
 import Slider from "react-slick";
-import { heroes } from "@/lib/data/heroes.json";
+import heroes from "@/lib/data/heroes.json";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function LegendsCarousel() {
+  const heroesData = heroes.heroes;
+
   const settings = {
     dots: false,
     infinite: true,
@@ -53,7 +55,7 @@ export default function LegendsCarousel() {
   return (
     <div className="overflow-hidden pt-20">
       <Slider {...settings} className="">
-        {heroes.map((hero) => (
+        {heroesData.map((hero) => (
           <div key={hero.id} className="w-max flex justify-center items-center">
             <Image
               width={200}
@@ -63,7 +65,9 @@ export default function LegendsCarousel() {
               className="object-center  w-[15rem] h-[15rem] shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out mx-auto"
             />
             <div className="w-full h-[6rem] bg-[#F94F26] flex items-center justify-center">
-              <p className="font-bold text-[0.6rem] font-comix-loud uppercase">{hero.name}</p>
+              <p className="font-bold text-[0.6rem] font-comix-loud uppercase">
+                {hero.name}
+              </p>
             </div>
           </div>
         ))}

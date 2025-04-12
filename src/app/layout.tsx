@@ -12,6 +12,7 @@ const geistSans = Geist({
 const titanOne = Titan_One({
   variable: "--font-titan-one",
   weight: "400",
+  subsets: ["latin"],
 });
 
 const sometypeMon = Sometype_Mono({
@@ -19,7 +20,7 @@ const sometypeMon = Sometype_Mono({
   subsets: ["latin"],
 });
 
-export const comfortaa = Comfortaa({
+const comfortaa = Comfortaa({
   variable: "--font-comfortaa",
   subsets: ["latin"],
   weight: ["300", "400", "700"],

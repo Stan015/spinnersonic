@@ -3,8 +3,8 @@
 import cn from "@/utils/cn";
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
-import { weapons } from "@/lib/data/weapons.json";
-import { leaderboard } from "@/lib/data/leaderboard.json";
+import weapons from "@/lib/data/weapons.json";
+import leaderboard from "@/lib/data/leaderboard.json";
 import Button from "./ui/button";
 import Slider, { type Settings } from "react-slick";
 import { useSwipeable } from "react-swipeable";
@@ -28,11 +28,14 @@ export default function PlaySpinGame() {
   const [spinFinished, setSpinFinished] = useState(false);
   const [spinCount, setSpinCount] = useState(0);
 
+  const weaponData = weapons.weapons;
+  const leaderboardData = leaderboard.leaderboard;
+
   // for leaderboard table
   const leadersPerPage = 4;
   const [currentPage, setCurrentPage] = useState(1);
   // Total pages based on the number of leaderboard items
-  const totalPages = Math.ceil(leaderboard.length / leadersPerPage);
+  const totalPages = Math.ceil(leaderboardData.length / leadersPerPage);
 
   // Spinner rotation states
   const [rotation, setRotation] = useState(0);
@@ -86,13 +89,13 @@ export default function PlaySpinGame() {
 
   // Setup swipe handlers for the spinner
   const handlers = useSwipeable({
-    onSwiping: (eventData) => {
+    onSwiping: () => {
       setIsSpinning(true);
     },
 
     onSwiped: (eventData) => {
       const currentTime = Date.now();
-      const timeDiff = (currentTime - lastSwipeTime.current) / 1000;
+      // const timeDiff = (currentTime - lastSwipeTime.current) / 1000;
       lastSwipeTime.current = currentTime;
 
       // Calculate the angle based on swipe velocity and direction
@@ -334,8 +337,8 @@ export default function PlaySpinGame() {
       <div className="w-full flex items-center justify-center">
         {(() => {
           const weaponToShow =
-            weapons.find((weapon) => weapon.name === selectedWeapon) ||
-            weapons[0];
+            weaponData.find((weapon) => weapon.name === selectedWeapon) ||
+            weaponData[0];
 
           return (
             <div
@@ -415,7 +418,7 @@ export default function PlaySpinGame() {
           >
             <div className="w-full mt-5 cursor-pointer">
               <Slider ref={sliderRef} {...settings}>
-                {weapons.map((weapon, index) => (
+                {weaponData.map((weapon) => (
                   <div
                     key={weapon.id}
                     className={cn(
@@ -538,7 +541,7 @@ export default function PlaySpinGame() {
                     slidesToScroll: 4,
                   }}
                 >
-                  {leaderboard.map((leader) => (
+                  {leaderboardData.map((leader) => (
                     <div
                       key={leader.id}
                       className="w-full !flex items-center justify-between border-b border-gray-200 py-3"
