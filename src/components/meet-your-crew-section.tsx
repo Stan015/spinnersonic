@@ -1,6 +1,5 @@
 import Image from "next/image";
 import WeaponsCarousel from "./weapons-carousel";
-import Button from "./ui/button";
 
 export default function MeetYourCrewSection() {
   return (

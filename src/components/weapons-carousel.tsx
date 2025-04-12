@@ -93,7 +93,7 @@ export default function WeaponsCarousel() {
       </div>
       <div className="w-full flex justify-center">
         <Button className="w-[15rem] font-extrabold text-2xl p-3 mt-10">
-          PLAY NOW
+          DOWNLOAD NOW
         </Button>
       </div>
     </div>
