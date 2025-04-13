@@ -3,7 +3,10 @@ import PlaySpinGame from "./play-spin-game";
 
 export default function MultiplayerBattleSection() {
   return (
-    <section className="flex flex-col items-center my-20 w-full max-md:my-10">
+    <section
+      className="flex flex-col items-center py-20 w-full max-md:py-10"
+      id="multiplayer-section"
+    >
       <h2 className="font-comfortaa text-5xl font-medium leading-15 text-center mb-6 max-w-[35rem] flex flex-col items-center">
         MULTIPLAYER
         <span className="text-[#F24C25]">BATTLES</span>

@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Button from "./ui/button";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
+  const router = useRouter();
+
   return (
     <section className="h-[45rem] max-sm:h-[40rem] flex flex-col items-center bg-[linear-gradient(96.2deg,_#FF5722_5.22%,_#99240B_99.44%)] relative  mt-[4rem] max-md:mt-[2rem]">
       <div className="h-[60%] w-full flex items-end flex-col pt-10 pr-[10%] max-lg:pr-[5%] max-md:p-[5%] relative">
@@ -39,6 +44,9 @@ export default function Hero() {
         <Button
           className="w-[15rem] font-extrabold text-2xl p-3"
           loadingText="Loading..."
+          onClick={() => {
+            router.push("#multiplayer-section");
+          }}
         >
           PLAY NOW
         </Button>
