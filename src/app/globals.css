@@ -37,7 +37,7 @@
 html {
   width: 100%;
   display: grid;
-  place-items: center;
+  justify-items: center;
 }
 
 body {
@@ -45,6 +45,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-mono), Helvetica, sans-serif;
   max-width: 1700px;
+  width: 100%;
 }
 
 @keyframes spin360 {
