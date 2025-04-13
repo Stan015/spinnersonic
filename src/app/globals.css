@@ -36,16 +36,24 @@
 
 html {
   width: 100%;
-  display: grid;
-  justify-items: center;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-mono), Helvetica, sans-serif;
-  max-width: 1700px;
-  width: 100%;
+}
+
+@media screen and (min-width: 1700px) {
+  html {
+    display: grid;
+    justify-items: center;
+  }
+
+  body {
+    max-width: 1700px;
+    width: 100%;
+  }
 }
 
 @keyframes spin360 {
