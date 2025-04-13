@@ -6,12 +6,13 @@ export default function MeetYourCrewSection() {
     <section className="flex flex-col items-center my-20 w-full max-md:my-[2rem]">
       <h2 className="flex flex-col max-sm:w-[90%] items-center justify-center px-[10%] max-md:px-[5%] font-titan-one gap-6 mb-6 max-md:gap-2  text-5xl font-medium  text-center max-md:text-4xl text-pretty max-sm:text-2xl">
         <span className="max-w-[35rem]">
-          <span className="hidden max-sm:inline-block">"</span>This isn&#39;t
-          just a race It&#39;s a <span className="text-yellow">legacy.</span>
+          <span className="hidden max-sm:inline-block">&ldquo;</span>This
+          isn&#39;t just a race It&#39;s a{" "}
+          <span className="text-yellow">legacy.</span>
         </span>
         <span className="text-red-orange">
           Spin fast. Spin fierce. Spin legendary.
-          <span className="hidden max-sm:inline-block">"</span>
+          <span className="hidden max-sm:inline-block">&ldquo;</span>
         </span>
       </h2>
 
