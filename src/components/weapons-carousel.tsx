@@ -28,6 +28,17 @@ export default function WeaponsCarousel() {
     beforeChange: () => setRotate(true),
     // After the slide has changed, reset the rotation flag.
     afterChange: () => setRotate(false),
+    responsive: [
+      {
+        breakpoint: 1338,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          speed: 900,
+          autoplaySpeed: 4000,
+        },
+      },
+    ],
   };
 
   return (
@@ -44,7 +55,7 @@ export default function WeaponsCarousel() {
               src={weapon.image}
               alt={weapon.name}
               className={cn(
-                "w-[15rem] h-[15rem] object-cover transform transition-transform duration-800 ease-in-out",
+                "w-[15rem] h-[15rem] max-lg:w-[10rem] max-lg:h-[10rem] max-md:w-[6rem] max-md:h-[6rem] max-sm:w-[4rem] max-sm:h-[4rem] object-cover transform transition-transform duration-800 ease-in-out",
                 rotate ? "rotate-360" : "",
               )}
             />
@@ -93,7 +104,7 @@ export default function WeaponsCarousel() {
           </svg>
         </button>
       </div>
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-center max-sm:hidden">
         <Button className="w-[15rem] font-extrabold text-2xl p-3 mt-10">
           DOWNLOAD NOW
         </Button>

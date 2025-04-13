@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between h-[6rem] px-[10%] py-4 text-white">
+    <header className="flex items-center justify-between h-[6rem] px-[10%] py-4 text-white max-sm:px-[5%]">
       <Link href="/" aria-label="Logo">
         <Image src={"/logo.png"} alt="Logo" width={60} height={60} />
       </Link>

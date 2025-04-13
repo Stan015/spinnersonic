@@ -67,6 +67,22 @@ export default function PlaySpinGame() {
       const newPage = Math.floor(currentSlide / leadersPerPage) + 1;
       setCurrentPage(newPage);
     },
+    responsive: [
+      {
+        breakpoint: 734,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 516,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+    ],
   };
 
   const [isPopoverOpen, setIsPopoverOpen] = useState<PopoverState>({
@@ -211,20 +227,20 @@ export default function PlaySpinGame() {
         {!readyToSpin ? (
           <button
             type="button"
-            className="font-comix-loud text-base cursor-pointer border border-[#FF842A] p-4 rounded-2xl transition-all hover:scale-107 beat"
+            className="font-comix-loud text-base cursor-pointer border border-[#FF842A] p-4 rounded-2xl max-sm:text-[0.8rem] transition-all hover:scale-107 beat"
             onClick={() => setReadyToSpin(true)}
           >
             PLAY WEB LEADERBOARDS
           </button>
         ) : (
           <div>
-            <div className="flex gap-3 items-center font-comix-loud text-base cursor-pointer">
+            <div className="flex gap-3 max-sm:gap-1 items-center font-comix-loud text-base cursor-pointer">
               <div className="relative">
                 <button
                   type="button"
                   aria-label="30 seconds"
                   className={cn(
-                    "cursor-pointer border border-transparent hover:border-[#FF842A] p-2 rounded-2xl transition-all hover:scale-107",
+                    "cursor-pointer border border-transparent hover:border-[#FF842A] p-2 rounded-2xl transition-all hover:scale-107 max-sm:text-[0.8rem]",
                     spinTime === 30 ? "text-[#FF842A]" : "",
                   )}
                   onClick={() => {
@@ -246,7 +262,7 @@ export default function PlaySpinGame() {
                   type="button"
                   aria-label="1 minutes"
                   className={cn(
-                    "cursor-pointer border border-transparent hover:border-[#FF842A] p-2 rounded-2xl transition-all hover:scale-107",
+                    "cursor-pointer border border-transparent hover:border-[#FF842A] p-2 rounded-2xl transition-all hover:scale-107 max-sm:text-[0.8rem]",
                     spinTime === 60 ? "text-[#FF842A]" : "",
                   )}
                   onClick={() => {
@@ -268,7 +284,7 @@ export default function PlaySpinGame() {
                   type="button"
                   aria-label="2 minutes"
                   className={cn(
-                    "cursor-pointer border border-transparent hover:border-[#FF842A] p-2 rounded-2xl transition-all hover:scale-107",
+                    "cursor-pointer border border-transparent hover:border-[#FF842A] p-2 rounded-2xl transition-all hover:scale-107 max-sm:text-[0.8rem]",
                     spinTime === 120 ? "text-[#FF842A]" : "",
                   )}
                   onClick={() => {
@@ -290,7 +306,7 @@ export default function PlaySpinGame() {
                   type="button"
                   aria-label="5 minutes"
                   className={cn(
-                    "cursor-pointer border border-transparent hover:border-[#FF842A] p-2 rounded-2xl transition-all hover:scale-107",
+                    "cursor-pointer border border-transparent hover:border-[#FF842A] p-2 rounded-2xl transition-all hover:scale-107 max-sm:text-[0.8rem]",
                     spinTime === 300 ? "text-[#FF842A]" : "",
                   )}
                   onClick={() => {
@@ -343,7 +359,7 @@ export default function PlaySpinGame() {
           return (
             <div
               {...handlers}
-              className="my-5 w-[20rem] h-[18rem] cursor-pointer"
+              className="my-5 w-[20rem] h-[18rem] max-sm:w-[18rem] max-sm:h-[16rem] cursor-pointer"
             >
               <Image
                 src={weaponToShow.image || "/placeholder.svg"}
@@ -387,9 +403,9 @@ export default function PlaySpinGame() {
         </div>
       )}
 
-      <div className="flex items-center gap-[2rem] mt-2 self-center w-full justify-center">
+      <div className="flex items-center gap-[2rem] max-sm:gap-[1rem] mt-2 self-center w-full justify-center">
         <Button
-          className="w-[15rem] font-extrabold text-2xl"
+          className="w-[15rem] font-extrabold text-2xl max-sm:text-base max-sm:w-[10rem]"
           aria-controls="change-spinner-popover"
           aria-expanded={isPopoverOpen}
           aria-haspopup="dialog"
@@ -398,7 +414,7 @@ export default function PlaySpinGame() {
           CHANGE SPINNER
         </Button>
         <Button
-          className="w-[15rem] font-extrabold text-2xl"
+          className="w-[15rem] font-extrabold text-2xl max-sm:text-base max-sm:w-[10rem]"
           aria-controls="leaderboard-popover"
           aria-expanded={isPopoverOpen}
           aria-haspopup="dialog"
@@ -414,7 +430,7 @@ export default function PlaySpinGame() {
             role="dialog"
             id="change-spinner-popover"
             aria-modal="true"
-            className="w-[60%] h-[34rem] flex flex-col items-center justify-between bg-[linear-gradient(109.69deg,_#FF842A_3.25%,_#FF5722_99.57%)] absolute -top-24 left-[50%] transform -translate-x-1/2 rounded-2xl shadow-lg p-4 z-20"
+            className="w-[60%] h-[34rem] max-md:w-[90%] max-md:h-[28rem] flex flex-col items-center justify-between bg-[linear-gradient(109.69deg,_#FF842A_3.25%,_#FF5722_99.57%)] absolute -top-24 max-md:top-0 left-[50%] transform -translate-x-1/2 rounded-2xl shadow-lg p-4 z-20"
           >
             <div className="w-full mt-5 cursor-pointer">
               <Slider ref={sliderRef} {...settings}>
@@ -436,7 +452,7 @@ export default function PlaySpinGame() {
                     }}
                   >
                     <div className="w-full h-[3rem] flex items-center justify-center mb-2.5">
-                      <h5 className="w-[10rem] leading-8 text-center text-black font-comix-loud uppercase">
+                      <h5 className="w-[10rem] leading-8 max-sm:!text-[0.8rem] max-sm:!w-[8rem] text-center text-black font-comix-loud uppercase">
                         {weapon.name}
                       </h5>
                     </div>
@@ -446,7 +462,7 @@ export default function PlaySpinGame() {
                       src={weapon.image || "/placeholder.svg"}
                       alt={weapon.name}
                       className={cn(
-                        "w-[15rem] h-[15rem] object-cover transform transition-transform duration-800 ease-in-out",
+                        "w-[15rem] h-[15rem] max-md:w-[8rem] max-md:h-[8rem] object-cover transform transition-transform duration-800 ease-in-out",
                         rotate ? "rotate-360" : "",
                       )}
                     />
@@ -518,7 +534,7 @@ export default function PlaySpinGame() {
             role="dialog"
             id="leaderboard-popover"
             aria-modal="true"
-            className="w-[60%] h-[34rem] flex flex-col items-center justify-between bg-[linear-gradient(109.69deg,_#FF842A_3.25%,_#FF5722_99.57%)] absolute -top-24 left-[50%] transform -translate-x-1/2 rounded-2xl shadow-lg p-4 z-20"
+            className="w-[60%] h-[34rem] max-md:w-[90%] flex flex-col items-center justify-between bg-[linear-gradient(109.69deg,_#FF842A_3.25%,_#FF5722_99.57%)] absolute -top-24 left-[50%] transform -translate-x-1/2 rounded-2xl shadow-lg p-4 z-20"
           >
             <h3 className="font-comfortaa text-3xl font-bold">
               Leaderboards (Web)
@@ -644,19 +660,21 @@ export default function PlaySpinGame() {
             role="dialog"
             id="game-over-popover"
             aria-modal="true"
-            className="w-[40%] h-[25rem] mt-6 flex flex-col items-center justify-between bg-[linear-gradient(109.69deg,_#FF842A_3.25%,_#FF5722_99.57%)] absolute top-0 left-[50%] transform -translate-x-1/2 rounded-2xl shadow-lg p-4 z-20"
+            className="w-[40%] h-[25rem] max-xl:w-[90%] mt-6 flex flex-col items-center justify-between bg-[linear-gradient(109.69deg,_#FF842A_3.25%,_#FF5722_99.57%)] absolute top-0 left-[50%] transform -translate-x-1/2 rounded-2xl shadow-lg p-4 z-20"
           >
             <div className="w-full h-full flex flex-col items-center justify-evenly gap-5">
-              <h3 className="font-comix-loud text-2xl mt-3">COMPLETE!</h3>
-              <p className="font-titan-one text-2xl">
+              <h3 className="font-comix-loud text-2xl mt-3 max-sm:text-lg">
+                COMPLETE!
+              </h3>
+              <p className="font-titan-one text-2xl text-center max-sm:text-lg">
                 You finished with a top RPM score of
               </p>
 
               <p className="font-comix-loud text-2xl">{highestRPM} RPM</p>
             </div>
-            <div className="flex items-center justify-center gap-6 mt-6">
+            <div className="flex items-center justify-center gap-6 mt-6 max-sm:gap-2">
               <Button
-                className="w-[8rem] font-semibold text-2xl"
+                className="w-[8rem] font-semibold text-2xl max-sm:text-lg max-sm:w-[6rem]"
                 onClick={() => {
                   // update replace accordingly
                   setSpinStarted(false);
@@ -672,7 +690,7 @@ export default function PlaySpinGame() {
                 RETRY
               </Button>
               <Button
-                className="w-[10rem] font-semibold text-2xl"
+                className="w-[8rem] font-semibold text-2xl max-sm:text-lg max-sm:w-[6rem]"
                 onClick={() =>
                   // replace with Save function
                   {
@@ -690,7 +708,7 @@ export default function PlaySpinGame() {
                 SAVE
               </Button>
               <Button
-                className="w-[8rem] font-semibold text-2xl"
+                className="w-[8rem] font-semibold text-2xl max-sm:text-lg max-sm:w-[6rem]"
                 onClick={() => {
                   setIsPopoverOpen({
                     open: false,

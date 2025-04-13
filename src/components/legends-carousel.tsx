@@ -12,7 +12,7 @@ export default function LegendsCarousel() {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 5,
+    slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
     speed: 3000,
@@ -22,31 +22,31 @@ export default function LegendsCarousel() {
       {
         breakpoint: 2024,
         settings: {
-          slidesToShow: 5,
-          slidesToScroll: 5,
+          slidesToShow: 6,
+          slidesToScroll: 6,
           dots: true,
         },
       },
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
+          slidesToShow: 5,
+          slidesToScroll: 5,
           dots: true,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 4,
+          slidesToScroll: 4,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 3,
+          slidesToScroll: 3,
         },
       },
     ],
@@ -62,10 +62,10 @@ export default function LegendsCarousel() {
               height={200}
               src={hero.image}
               alt={hero.name}
-              className="object-center  w-[15rem] h-[15rem] shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out mx-auto"
+              className="object-center  w-[15rem] h-[15rem] max-lg:w-[10rem] max-lg:h-[10rem] max-sm:w-[8rem] max-sm:h-[8rem] shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out mx-auto"
             />
-            <div className="w-full h-[6rem] bg-[#F94F26] flex items-center justify-center">
-              <p className="font-bold text-[0.6rem] font-comix-loud uppercase">
+            <div className="w-full h-[6rem] max-sm:h-[4.5rem] bg-[#F94F26] flex items-center justify-center">
+              <p className="font-bold text-[0.6rem] font-comix-loud uppercase text-center max-sm:text-[0.4rem]">
                 {hero.name}
               </p>
             </div>
