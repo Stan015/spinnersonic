@@ -44,14 +44,14 @@ body {
   font-family: var(--font-mono), Helvetica, sans-serif;
 }
 
-@media screen and (min-width: 1700px) {
+@media screen and (min-width: 1740px) {
   html {
     display: grid;
     justify-items: center;
   }
 
   body {
-    max-width: 1700px;
+    max-width: 1740px;
     width: 100%;
   }
 }
